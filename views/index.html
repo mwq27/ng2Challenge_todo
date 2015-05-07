@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <script src="/vendor/es6-shim.js"></script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title><%= title %></title>
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/base.css" rel="stylesheet">
+      <link href="css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <todoList>
+      <img class="loading" src="images/loading.svg" width="94px">
+    </todoList>
+    <script>
+      System.paths = {
+          'angular2/*':'/vendor/angular2/*.js',
+          'rx/*': '/vendor/rx.all.js',
+          'rtts_assert/*': '/vendor/rtts_assert/*.js',
+          'components/*': 'components/*.js',
+          'todo': 'components/todo/index.es6'
+      };
+      System.import('todo');
+    </script>
+  </body>
+</html>

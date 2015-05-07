@@ -1,0 +1,39 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>TodoList</h1>
+    <form (submit)="addTodo($event, todoForm.controls.todoItem.value)" [control-group]="todoForm">
+      <input class="new-todo" autofocus control="todoItem" value="todoForm.controls.todoItem.value"/>
+    </form>
+  </header>
+  <div class="main">
+    <ul class="todo-list">
+      <li *for="var todo of todos">
+        <div class="view">
+          <input type="checkbox" class="toggle" (click)="completeTodo(todo)" [checked]="todo.completed">
+          <label>{{todo.title}}</label>
+          <button (click)="removeTodo(todo)" class="destroy"></button>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+  <footer class="footer" *if="todos.length">
+          <span class="todo-count" id="todo-count"><strong>{{remainingCount}}</strong>
+          </span>
+          <ul class="filters">
+            <li>
+              <a (click)="showAllTodos()">All</a>
+            </li>
+            <li>
+              <a (click)="showActiveTodos()">Active</a>
+            </li>
+            <li>
+              <a (click)="showCompletedTodos()">Completed</a>
+            </li>
+          </ul>
+          <button class="clear-completed" (click)="clearCompletedTodos()" *if="completedCount">Clear completed</button>
+        </footer>
+
+
+
+</section>
