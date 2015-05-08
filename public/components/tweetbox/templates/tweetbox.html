@@ -1,0 +1,8 @@
+<div class="form-group">
+  <div class="col-md-4">
+  <label for="">Message</label>
+    <textarea placeholder="Message" class="form-control" control="tweetText"  name="" id="" cols="30" rows="10" (keyup)="updateCharCount($event)"></textarea>
+    <div class="count help-block" [class.over-limit]="maxChars">{{charCount}} characters left</div>
+    <button class="btn btn-primary">Send Tweet</button>
+  </div>
+</div>
